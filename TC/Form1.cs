@@ -71,16 +71,16 @@ namespace TC
         {
             this.Validate();
             this.ListBS.EndEdit();
-            this.TAM.UpdateAll(this.tC);
+          //  this.TAM.UpdateAll(this.tC);
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'tC.Carros' table. You can move, or remove it, as needed.
-            this.carrosTableAdapter.Fill(this.tC.Carros);
+         //   this.carrosTableAdapter.Fill(this.tC.Carros);
             // TODO: This line of code loads data into the 'tC.List' table. You can move, or remove it, as needed.
-            this.ListTA.Fill(this.tC.List);
+       //     this.ListTA.Fill(this.tC.List);
 
         }
 
@@ -188,22 +188,22 @@ namespace TC
 
                     }
 
-               
 
-              
-                   
+                    string[] data = content.Split('*');
+
+                    Application.DoEvents();
+
+                    this.tC.Carros.AddCarrosRow(r, data[3], data[4], data[5], data[10], data[12], data[13], data[14], data[16], "", data[17], r.Estado, telf, data[15]);
+
+
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
 
                 }
 
-                string[] data = content.Split('*');
-
-                Application.DoEvents();
-
-                this.tC.Carros.AddCarrosRow(r, data[3], data[4], data[5], data[10], data[12], data[13], data[14], data[16], "", data[17], r.Estado, telf, data[15]);
-
+              
             }
 
 
